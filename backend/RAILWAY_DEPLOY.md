@@ -19,11 +19,26 @@
 4. Selecione "Deploy from GitHub repo"
 5. Escolha o repositório `GuiRCosta/wppcloud`
 
-### 2. Configurar o Serviço
+### 2. Configurar o Serviço ⚠️ IMPORTANTE
 
-1. **Root Directory:** Configure como `backend`
+**CRÍTICO:** O Railway precisa saber que o backend está na pasta `backend/`
+
+1. Após criar o projeto, clique no serviço criado
+2. Vá em **Settings** (ícone de engrenagem)
+3. Role até **Root Directory**
+4. **Digite:** `backend` (sem barra no final)
+5. Clique em **Save**
+
+Agora configure os comandos:
+
+1. Vá em **Settings** > **Deploy**
 2. **Build Command:** `npm install && npm run build`
-3. **Start Command:** `npm run start:prod`
+3. **Start Command:** `npm run start:migrate`
+4. Salve as alterações
+
+**OU** configure via interface:
+- **Settings** > **Deploy** > **Deploy Command**
+- Deixe vazio (Railway detectará automaticamente do `package.json`)
 
 ### 3. Adicionar Banco de Dados PostgreSQL
 
